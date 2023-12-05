@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>calculator</title>
+  </head>
+  <body>
+    <center>
+      <h1 style="color: brown; text-align: center">Calculator</h1>
+      <table>
+        <tr>
+          <td>Enter Number 1</td>
+          <td><input type="text" id="n1" /></td>
+        </tr>
+        <tr>
+          <td>Enter Number 2</td>
+          <td><input type="text" id="n2" /></td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td><input type="text" id="n3" /></td>
+        </tr>
+      </table>
+      <br />
+      <table>
+        <input type="button" value="Addition" onclick="Add()" id="NUMadd" />
+        <input type="button" value="Subtraction" onclick="sub()" id="NUMsub" />
+        <input
+          type="button"
+          value="Multiplication"
+          onclick="mul()"
+          id="NUMmul"
+        />
+        <input type="button" value="Division" onclick="div()" id="NUMdiv" />
+      </table>
+    </center>
+    <script>
+      function Add() {
+        var x = document.getElementById("n1");
+        var y = document.getElementById("n2");
+        var res = document.getElementById("n3");
+
+        res.value = parseInt(x.value) + parseInt(y.value);
+        console.log(res);
+      }
+      function Multiplication() {
+        var x = document.getElementById("n1");
+        var y = document.getElementById("n2");
+        var res = document.getElementById("n3");
+
+        res.value = parseInt(x.value) * parseInt(y.value);
+        console.log(res);
+      }
+      function sub() {
+        var z = document.getElementById("n1");
+        var p = document.getElementById("n2");
+        var res1 = document.getElementById("n3");
+
+        res1.value = parseInt(z.value) - parseInt(p.value);
+        console.log(res1);
+      }
+      function mul() {
+        var x = document.getElementById("n1");
+        var y = document.getElementById("n2");
+        var res = document.getElementById("n3");
+
+        res.value = parseInt(x.value) * parseInt(y.value);
+        console.log(res);
+      }
+      function div() {
+        var x = document.getElementById("n1");
+        var y = document.getElementById("n2");
+        var res = document.getElementById("n3");
+
+        res.value = parseInt(x.value) / parseInt(y.value);
+        console.log(res);
+      }
+    </script>
+  </body>
+</html>
