@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+    <style>
+        .tdAddre {
+            width: 20%;
+            font-size: 23px;
+        }
+
+        .select {
+            height: 30px;
+            font-size: 20px;
+            width: 60%;
+        }
+
+        .tr {
+            font-size: 27px;
+        }
+
+        input {
+            height: 30px;
+            font-size: 20px;
+            width: 90%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table>
+            <thead>
+                <td style="text-align: center;padding-bottom: 40px;font-weight: bold;font-size: 40px;" colspan="3">
+                    Registration form</td>
+            </thead>
+            <tr class="tr">
+                <td>Name :</td>
+                <td>
+                    <input type="text" id="txtName" placeholder="Enter Name" /> *
+                </td>
+                <td colspan="2">
+                    <div id="divForNameError" style="color:red;"></div>
+                </td>
+            </tr>
+
+            <tr class="tr">
+                <td>
+                    BirthDate :
+                </td>
+                <td>
+                    <input type="date" id="txtDob" /> *
+                </td>
+                <td>
+                    <div style="color: red;" id="divForDobError"></div>
+                </td>
+            </tr>
+
+            <tr class="tr">
+                <td>
+                    Email :
+                </td>
+                <td>
+                    <input type="email" id="txtEmail" placeholder="abc@gmail.com" /> *
+                </td>
+                <td>
+                    <div style="color: red;" id="divForEmailError"></div>
+                </td>
+            </tr>
+
+            <tr class="tr">
+                <td>
+                    Password :
+                </td>
+                <td>
+                    <input type="password" id="txtPassword" placeholder="********" /> *
+                </td>
+                <td>
+                    <div style="color: red;" id="divForPasswordError"></div>
+                </td>
+            </tr>
+
+
+            <tr class="tr">
+                <td>
+                    Address :
+                </td>
+                <td>
+                    <select id="txtState" class="select">
+                        <option value="Maharashtra" selected>Maharashtra</option>
+                        <option value="Gujrat">Gujrat</option>
+                        <option value="MP">MP</option>
+                        <option value="UP">UP</option>
+                        <option value="AP">AP</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                    </select>
+                </td>
+                <td class="tdAddre">
+                    <select id="txtDistrict" class="select">
+                        <option value="Nashik">Nashik</option>
+                        <option value="Chatrapati Sambhaji Nagar">Chatrapati Sambhaji Nagar</option>
+                    </select>
+                </td>
+                <td class="tdAddre">
+                    <select id="txtCity" class="select">
+                        <option value="Nashik">Nashik</option>
+                        <option value="Delhi">Shirdi</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="tr" style="text-align: center;margin-right:20px; font-size: 23px;">
+                <td class="tdAddre" style="padding-right:90px"></td>
+                <td class="tdAddre" style="padding-right:90px;">State</td>
+                <td class="tdAddre" style="padding-right:90px">District</td>
+                <td class="tdAddre" style="padding-right:90px">City</td>
+            </tr>
+
+
+            <tr class="tr">
+                <td>
+                    Gender * :
+                </td>
+                <td style="font-size: 23px;">
+                    <input type="radio" id="txtMale" name="txtGender" value="Male" style="height: 20px;width:20%" />
+                    <label for="txtMale">Male</label>
+                </td>
+                <td style="font-size: 23px;">
+                    <input type="radio" id="txtFemale" name="txtGender" value="Female"
+                        style="height: 20px;width:20%" />Female
+                </td>
+                <td>
+                    <div style="color: red;margin-left:0%;" id="divForGenderError"></div>
+                </td>
+            </tr>
+
+            <tr class="tr">
+                <td>
+                    Upload your photo :
+                </td>
+                <td colspan="2">
+                    <input type="file" id="inputImage" name="myImage" accept="image/*" />
+                </td>
+
+            </tr>
+
+            <tr class="tr">
+                <td>
+                    Select your course :
+                </td>
+                <td>
+                    <select id="txtCourse" class="select">
+                        <option value="" selected style="height: 20px;">Select your course</option>
+                        <option value="PG-DAC">PG-DAC</option>
+                        <option value="PG-DITIS">PG-DITIS</option>
+                        <option value="PG-DBDA">PG-DBDA</option>
+                        <option value="PG-DESD">PG-DESD</option>
+                        <option value="PG-DMC">PG-DMC</option>
+                        <option value="PG-DAI">PG-DAI</option>
+                        <option value="PG-DASSD">PG-DASSD</option>
+                    </select>
+                </td>
+                <td>
+                    <div style="color: red;" id="divForCourseError"></div>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="2" style="padding-top: 30px;text-align: center;">
+                    <input style="width: 25%;" type="button" value="Register" onclick="DoRegister()" />
+                </td>
+                <td colspan="2" style="padding-top: 30px;">
+                    <input style="width: 25%;" type="button" value="Clear" onclick="ClearControls()" />
+                </td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function ClearControls()
+        {
+            Clear("txtName");
+            Clear("txtDob");
+            Clear("txtEmail");
+            Clear("txtPassword");
+            Clear("txtState");
+            Clear("txtDistrict");
+            Clear("txtCity");
+            Clear("txtCourse");
+            Clear("inputImage")
+            ClearGender("txtGender");
+
+
+        }
+        function DoRegister() {
+            var value;
+            if (!((value = ValidateForEmpty("txtName", "divForNameError", "Name should not be empty")) == "")) {
+                var regex = /^[a-zA-Z\s]+$/;
+                if (regex.test(value) === false) 
+                {
+                    var refToErrorControl = document.getElementById("divForNameError");
+                    refToErrorControl.innerText = "Enter valid Name";
+                }
+            }
+
+           
+            if (!((value = ValidateForEmpty("txtEmail", "divForEmailError", "Email should not be empty")) == "")) 
+            {
+                debugger;
+                regex =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+                if (regex.test(value) === false) 
+                {
+                    refToErrorControl = document.getElementById("divForEmailError");
+                    refToErrorControl.innerText = "Enter valid Email";
+                }
+            }
+
+            if (!((value = ValidateForEmpty("txtEmail", "divForEmailError", "Email should not be empty")) == "")) 
+            {
+                debugger;
+                regex =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+                if (regex.test(value) === false) 
+                {
+                    refToErrorControl = document.getElementById("divForEmailError");
+                    refToErrorControl.innerText = "Enter valid Email";
+                }
+            }
+            
+
+            if (!((value = ValidateForEmpty("txtPassword", "divForPasswordError", "Password should not be empty")) == "")) 
+            {
+                debugger;
+                regex =/^(?=.{5,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W])/; 
+                if (regex.test(value) === false) 
+                {
+                    refToErrorControl = document.getElementById("divForPasswordError");
+                    refToErrorControl.innerText = "Enter valid Password";
+                }
+            }
+
+            ValidateForEmpty("txtDob", "divForDobError", "Birthdate should not be empty");
+            ValidateForEmpty("txtCourse", "divForCourseError", "Course should be selected");
+
+            ValidateEmptyForGender("txtGender", "divForGenderError", "Gender should be selected");
+        }
+
+    </script>
+    <script src="validation.js"></script>
+    <script src="clearControl.js"></script>
+
+</body>
+
+</html>

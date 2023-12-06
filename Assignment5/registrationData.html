@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration</title>
+
+  <style>
+    tr {
+      height: 25px;
+    }
+
+    td {
+      width: 25%;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 15px;
+    }
+
+    :placeholder-shown {
+      font-family: "Times New Roman", Times, serif;
+      color: black;
+    }
+
+    input {
+      width: 75%;
+    }
+
+    .MyStyle {
+      width: 10%;
+    }
+
+    
+
+
+  </style>
+</head>
+
+<body>
+  <br>
+  <h1 style="
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      ">
+    Customer Registration
+  </h1>
+
+  <br>
+  <center>
+    <table style="width: 100%; background-color: rgb(250, 177, 151); height: 400px">
+      <tr>
+        <td style="width: 5%"></td>
+        <td>Cnum:</td>
+        <td>
+          <input type="number" id="cnum" placeholder="12" style="
+                border-style: solid;
+                width: 95%;
+                height: 90%;
+                border-color: black;
+                border-width: 01px;
+              " />
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>Cname:</td>
+        <td>
+          <input type="text" id="cname" placeholder="Sachin" style="
+                border-style: solid;
+                width: 95%;
+                height: 90%;
+                border-color: black;
+                border-width: 01px;
+              " />
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>Email:</td>
+        <td>
+          <input type="email" id="cemail" placeholder="sachin@gmail.com" style="
+                border-style: solid;
+                width: 95%;
+                height: 90%;
+                border-color: black;
+                border-width: 01px;
+              " />
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>Password</td>
+        <td>
+          <input type="password" id="password" placeholder="***" style="
+                border-style: solid;
+                width: 95%;
+                height: 90%;
+                border-color: black;
+                border-width: 01px;
+              " />
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>Confirrm_Password</td>
+        <td>
+          <input type="password" id="cpassword" placeholder="***" style="
+                border-style: solid;
+                width: 95%;
+                height: 90%;
+                border-color: black;
+                border-width: 01px;
+              " />
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>Mobile_No</td>
+        <td>
+          <input type="number" id="cmobileno" placeholder="8999266801" style="
+                border-style: solid;
+                width: 95%;
+                height: 90%;
+                border-color: black;
+                border-width: 01px;
+              " />
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>City</td>
+        <td>
+          <input type="text" id="ccity" placeholder="Pune" style="
+                border-style: solid;
+                width: 95%;
+                height: 90%;
+                border-color: black;
+                border-width: 01px;
+              " />
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>State</td>
+        <td>
+          <select name="selectstate" id="cstate">
+            <option name="cselected" value="" selected>Select State</option>
+            <option name="cselected" value="Maharashtra">Maharashtra</option>
+            <option name="cselected" value="Gujrat">Gujrat</option>
+            <option name="cselected" value="Delhi">Delhi</option>
+            <option name="cselected" value="Bihar">Bihar</option>
+          </select>
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>Pincode</td>
+        <td>
+          <input type="number" id="cpincode" placeholder="411039" style="
+                border-style: solid;
+                width: 95%;
+                height: 90%;
+                border-color: black;
+                border-width: 01px;
+              " />
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td>Request_Payment_Mode</td>
+        <td style="width: 25%">
+          <table>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <input id="ccredit" name="paymenttype" type="checkbox" style="margin-left: 0px" />
+                    </td>
+                    <td>Credit</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <input id="cupi" name="paymenttype" type="checkbox" style="margin-left: 0px" />
+                    </td>
+                    <td>Debit</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <input id="cdebit" name="paymenttype" type="checkbox" style="margin-left: 0px" />
+                    </td>
+                    <td>UPI</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+      <tr>
+        <td style="width: 5%"></td>
+        <td></td>
+        <td align="center">
+         
+        </td>
+        <td>
+        </td>
+        <td style="width: 5%"></td>
+      </tr>
+    </table>
+  </center>
+
+  <script>
+    var cnumber = localStorage.getItem('cnumber');
+    var cname = localStorage.getItem('cname');
+    // ... (retrieve other stored fields)
+
+    // Display the retrieved data in the desired HTML elements
+    document.getElementById("cnum").innerText = cnumber;
+  </script>
+</body>
+
+</html>
